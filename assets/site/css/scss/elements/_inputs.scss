@@ -1,0 +1,85 @@
+/* DEFAULT
+--------------------------------------------------------*/
+
+.form-input {
+	@include inline;
+	@include size(100%, $form-height);
+	border: 1px solid $border-color;
+	padding: 0 10px;
+	background: #fff;
+	@include transition(border-color 0.3s ease 0s);
+	
+	&:focus {
+		border-color: $color-link;
+	}
+	
+	&.input-error {
+		border-color: $color-error;
+	}
+}
+
+.form-input-xs {
+	padding: 0 3px;
+	height: $form-height-xs;
+}
+
+textarea {
+	&.form-input {
+		height: auto;
+		padding: 10px;
+		max-width: 100%;
+		line-height: 20px;
+	}
+	&.no-resize {resize: none;}
+}
+
+input[readonly] {
+	background: #f9f9f9;
+	cursor: not-allowed;
+}
+
+
+/* INPUT-FILE
+--------------------------------------------------------*/
+
+.form-file {
+	@include inline;
+	position: relative;
+	width: 100%;
+	padding-right: 100px;
+	
+	.form-input {
+		padding-right: 45px;
+	}
+	.btn {
+		@include position(absolute, null, 0, 0);
+		width: 100px;
+		padding: 0 10px;
+		background: $color-gray-lite;
+		
+		&:hover {
+			background: $color-gray;
+		}
+		
+		.fa5 {margin-right: 5px;}
+	}
+	
+	&-clear {
+		@include flex(center, center);
+		@include position(absolute, null, 0, 100px);
+		@include size(35px, 100%);
+		@include font(16px, null, null, $color-gray-lite);
+		text-decoration: none;
+		@include transition;
+		
+		&:hover {
+			color: #d11212;
+		}
+		
+		&-hidden {
+			display: none;
+		}
+	}
+	
+	input[type="file"] {display: none;}
+}

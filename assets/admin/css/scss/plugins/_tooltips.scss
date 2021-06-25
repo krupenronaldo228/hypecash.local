@@ -1,0 +1,74 @@
+/* DEFAULT SETTINGS
+------------------------------------------------------------------------ */
+
+.tooltip {
+	position: absolute;
+	z-index: 1070;
+	display: block;
+	margin: 0;
+	@include font($font-size-xs, 600, $font-line-xl, $color-white);
+	@include text(center, none, none);
+	text-shadow: none;
+	letter-spacing: normal;
+	word-break: normal;
+	word-spacing: normal;
+	white-space: normal;
+	line-break: auto;
+	word-wrap: break-word;
+	opacity: 0;
+	
+	&.show, &.fade {
+		opacity: 1;
+	}
+	
+	&-arrow {
+		position: absolute;
+		border: 5px solid transparent;
+	}
+	
+	&-inner {
+		max-width: 200px;
+		padding: 3px 10px;
+		background-color: $sidenav-color;
+	}
+	
+	&-top {
+		margin-top: -8px;
+		
+		.tooltip-arrow {
+			border-top-color: $sidenav-color;
+			left: 50%; top: 100%;
+			margin-left: -5px;
+		}
+	}
+	
+	&-bottom {
+		margin-top: 8px;
+		
+		.tooltip-arrow {
+			border-bottom-color: $sidenav-color;
+			left: 50%; bottom: 100%;
+			margin-left: -5px;
+		}
+	}
+	
+	&-left {
+		margin-left: -8px;
+		
+		.tooltip-arrow {
+			border-left-color: $sidenav-color;
+			left: 100%; top: 50%;
+			margin-top: -5px;
+		}
+	}
+	
+	&-right {
+		margin-left: 8px;
+		
+		.tooltip-arrow {
+			border-right-color: $sidenav-color;
+			right: 100%; top: 50%;
+			margin-top: -5px;
+		}
+	}
+}

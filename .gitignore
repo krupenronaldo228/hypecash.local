@@ -1,0 +1,6 @@
+#/assets/uploads/*
+#!/assets/uploads/settings
+#!/assets/uploads/nophoto
+**/desktop.ini
+/.idea
+/vendor

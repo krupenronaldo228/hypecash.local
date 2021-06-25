@@ -1,0 +1,43 @@
+/* DEFAULT
+--------------------------------------------------------*/
+
+.btn {
+	@include inline;
+	@include size(null, $form-height);
+	@include font(14px, 400, $form-height, #fff);
+	@include text(center, none);
+	padding: 0 25px;
+	background: $color-link;
+	@include transition;
+	
+	&:hover {
+		background: $color-link-hover;
+		cursor: pointer;
+	}
+	
+}
+
+
+/* SIZES
+--------------------------------------------------------*/
+
+.btn-xl {
+	height: $form-height-xl;
+	line-height: $form-height-xl;
+	padding: 0 30px;
+}
+
+.btn-xs {
+	height: $form-height-xs;
+	line-height: $form-height-xs;
+	padding: 0 15px;
+}
+
+
+/* COLORS
+--------------------------------------------------------*/
+
+.btn-gray {
+	background: $color-gray;
+	&:hover {background: $color-gray-lite;}
+}

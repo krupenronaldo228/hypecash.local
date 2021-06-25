@@ -1,0 +1,97 @@
+.text-editor {
+	@include font(null, null, 1.7);
+	
+	
+	// headers
+	
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0 0 20px;
+		font-weight: 700;
+	}
+	
+	h1 {font-size: 200%;}
+	h2 {font-size: 160%;}
+	h3 {font-size: 140%;}
+	h4 {font-size: 120%;}
+	h5 {font-size: 100%;}
+	h6 {font-size: 80%;}
+	
+	
+	// p
+	
+	p {
+		margin-bottom: 10px;
+		
+		+ h1, + h2, + h3, + h4, + h5, + h6 {
+			margin-top: 20px;
+		}
+	}
+	
+	> p:last-child,
+	* p:last-child {
+		margin-bottom: 0;
+	}
+	
+	
+	// lists
+	
+	ul, ol {
+		margin: 10px 0 20px;
+		padding: 0 0 0 40px;
+		
+		> li {
+			list-style: inherit;
+		}
+	}
+	ul {
+		list-style: disc inside;
+	}
+	
+	ol {
+		list-style: decimal inside;
+	}
+	
+	
+	// table
+	
+	table {
+		$border: 1px solid $border-color;
+		$padding: 15px 20px;
+		
+		border: $border;
+		margin-bottom: 20px;
+		th {
+			padding: $padding;
+			border: $border;
+			font-weight: 600;
+		}
+		td {
+			padding: $padding;
+			border: $border;
+		}
+	}
+	
+	// inline
+	
+	strong {font-weight: 700;}
+	
+	hr {
+		margin: 15px 0;
+		border-top: 1px solid $border-color;
+	}
+	
+	blockquote {
+		padding: 10px 0 10px 20px;
+		margin: 20px 40px;
+		border-left: 4px solid $border-color;
+	}
+	
+	.marker {
+		padding: 1px 3px;
+		background: #e5e5e5;
+	}
+	 
+	img {
+		max-width: 100%;
+	}
+}

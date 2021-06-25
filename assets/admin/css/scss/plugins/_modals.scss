@@ -1,0 +1,228 @@
+/* DEFAULT SETTINGS
+------------------------------------------------------------------------ */
+
+.modal {
+	@include position(fixed, 0, 0, 0, 0, 1050);
+	display: none; overflow: hidden;
+	-webkit-overflow-scrolling: touch;
+	outline: 0;
+	padding: 30px 10px;
+	
+	// COMMON STYLES
+	&-open {
+		overflow: hidden;
+		& .modal {
+			overflow: {x: hidden; y: auto;}
+		}
+	}
+	
+	&.fade .modal-dialog {
+		-webkit-transition: -webkit-transform .3s ease-out;
+			 -o-transition:      -o-transform .3s ease-out;
+				transition:         transform .3s ease-out;
+		-webkit-transform: translate(0, -25%);
+			-ms-transform: translate(0, -25%);
+			 -o-transform: translate(0, -25%);
+				transform: translate(0, -25%);
+	}
+	&.in .modal-dialog {
+	  -webkit-transform: translate(0, 0);
+		  -ms-transform: translate(0, 0);
+		   -o-transform: translate(0, 0);
+			  transform: translate(0, 0);
+	}
+	&-backdrop {
+		@include position(fixed, 0, 0, 0, 0, 1040);
+		background-color: #000;
+		
+		&.fade {filter: alpha(opacity=0); opacity: 0;}
+		&.in {filter: alpha(opacity=50); opacity: .5;}
+	}
+	
+	
+	&-scrollbar-measure {
+		@include position(absolute, null, -9999px);
+		@include size(50px, 50px);
+		overflow: scroll;
+	}
+	
+	&-dialog {
+		position: relative;
+		width: 500px;
+		margin: 0 auto;
+	}
+	
+	&-content {
+		position: relative;
+		background-color: #fff;
+		-webkit-background-clip: padding-box;
+			  background-clip: padding-box;
+		outline: 0;
+		-webkit-box-shadow: 0 3px 9px rgba(#000, .5);
+			  box-shadow: 0 3px 9px rgba(#000, .5);
+	}
+	
+	&-close {
+		@include flex(center, center);
+		@include position(absolute, null, 0, 0, null, 50);
+		@include size(40px, 40px);
+		@include font(14px, null, null, $color-gray-lite);
+		text-decoration: none;
+		cursor: pointer;
+		
+		&:hover {color: $color-gray;}
+	}
+	
+	&-header {
+		padding: 15px;
+		border-bottom: 1px solid $border-color;
+	}
+	&-body {
+		padding: 15px;
+	}
+	&-footer {
+		padding: 15px;
+		border-top: 1px solid $border-color;
+	}
+	
+	&-title {
+		@include font($font-h3, 600, $font-line-xs);
+	}
+	&-brief {
+		margin-top: 3px;
+		@include font($font-size-xs, null, $font-line, $color-gray);
+	}
+	
+	&-actions {
+		@include flex(center, flex-end);
+		> * {
+			margin-right: 8px;
+			&:last-child {margin: 0;}
+		}
+	}
+	
+}
+
+
+/* SIZE SETTINGS
+------------------------------------------------------------------------ */
+
+.modal-xs {
+	.modal {
+		&-dialog {
+			width: 350px;
+		}
+		&-title {
+			font-size: $font-size-xl;
+		}
+	}
+}
+
+.modal-xl {
+	.modal {
+		&-dialog {
+			width: 750px;
+		}
+	}
+}
+
+.modal-wide {
+	.modal {
+		&-dialog {
+			width: 100%;
+		}
+	}
+}
+
+.modal-fullsize {
+	padding: 0;
+	
+	.modal {
+		&-dialog {
+			width: 100%;
+			min-height: 100%;
+			background: #fff;
+		}
+		&-content {
+			box-shadow: none;
+		}
+	}
+}
+
+
+/* POSITION SETTINGS
+------------------------------------------------------------------------ */
+
+.modal-top,
+.modal-bottom,
+.modal-left,
+.modal-right {
+	padding: 0;
+	
+	.modal-dialog {
+		background: #fff;
+		box-shadow: 0 3px 9px rgba(#000, .5);
+	}
+	.modal-content {
+		box-shadow: none;
+	}
+	
+	&.fade .modal-dialog {
+		@include transition(all 0.3s ease-out 0s);
+		@include transform(none);
+		opacity: 0;
+	}
+	&.in .modal-dialog {
+		opacity: 1;
+	}
+}
+
+.modal-top {
+	.modal {
+		&-dialog {
+			width: 100%;
+		}
+	}
+}
+
+.modal-bottom {
+	.modal {
+		&-dialog {
+			@include position(absolute, 0, null, null, 0);
+			width: 100% $imp;
+			
+		}
+	}
+}
+
+.modal-left {
+	.modal {
+		&-dialog {
+			@include position(absolute, 0, 0);
+			width: 350px;
+			min-height: 100%;
+		}
+	}
+}
+
+.modal-right {
+	.modal {
+		&-dialog {
+			@include position(absolute, null, 0, 0);
+			width: 350px;
+			min-height: 100%;
+		}
+	}
+}
+
+
+/* RESPONSIVE
+------------------------------------------------------------------------ */
+
+@media (max-width: 780px) {
+	.modal-xl .modal-dialog {width: auto;}
+}
+
+@media (max-width: 530px) {
+	.modal-dialog {width: auto $imp;}
+}

@@ -1,0 +1,52 @@
+.pagination {
+	@include flex(stretch, flex-start);
+	margin-top: 20px;
+	
+	> li {
+		border: 1px solid $form-border;
+		border-right-width: 0;
+		
+		&:last-child {
+			border-right-width: 1px;
+		}
+	}
+	
+	&-num, &-nav {
+		
+		a {
+			@include flex(center, center);
+			@include font($font-size, 600, 20px, $color);
+			@include text(center, none);
+			padding: 10px 10px;
+			min-width: 40px;
+			height: 100%;
+			white-space: nowrap;
+			@include transition;
+			
+			&:hover {
+				background: $body-color;
+			}
+		}
+	}
+	
+	&-num a.pagination-current {
+		@include font(null, 800, null, $color-info);
+		background: $body-color;
+	}
+}
+
+@media (max-width: 600px) {
+
+	.pagination {
+	
+		&-num, &-nav {
+			
+			a {
+				font-size: $font-size-xs;
+				padding: 5px 5px;
+				min-width: 30px;
+			}
+		}
+	}
+
+}

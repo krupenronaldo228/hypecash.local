@@ -1,0 +1,98 @@
+/* DEFAULT SETTINGS
+------------------------------------------------------------------------ */
+
+.tabs {
+	position: relative;
+	margin-bottom: $margin;
+	
+	&-list {
+		position: relative;
+		@include flex(stretch, flex-start, nowrap);
+		overflow: auto;
+		
+		&:after {
+			content: "";
+			display: block;
+			@include position(absolute, 0, null, null, 0);
+			width: 100%;
+			border-bottom: 2px solid $border-color;
+		}
+		
+		&-wide {
+			> li {
+				flex-grow: 1;
+			}
+		}
+	}
+	
+	&-link {
+		position: relative;
+		z-index: 10;
+		display: block;
+		height: 100%;
+		@include font($font-size, null, $font-line, $color);
+		@include text(center, none);
+		white-space: nowrap;
+		padding: 0 20px 10px;
+		border-bottom: 2px solid transparent;
+		transition: border 0.3s ease 0s,
+					color 0.3s ease 0s;
+		
+		&:hover {
+			border-bottom-color: $color-gray-lite;
+			color: $color-gray;
+		}
+		&.current {
+			border-bottom-color: $color-gray-lite;
+			font-weight: 600;
+		}
+		
+		&-info {
+			&:hover, &.current {
+				color: $color-space;
+				border-bottom-color: $color-info;
+			}
+		}
+		&-success {
+			&:hover, &.current {
+				color: $color-meadow;
+				border-bottom-color: $color-success;
+			}
+		}
+		&-warning {
+			&:hover, &.current {
+				color: $color-brown;
+				border-bottom-color: $color-warning;
+			}
+		}
+		&-error {
+			&:hover, &.current {
+				color: $color-fire;
+				border-bottom-color: $color-error;
+			}
+		}
+	}
+	
+	&-content {
+		display: none;
+		padding-top: $margin;
+		
+		&.current {
+			display: block;
+		}
+	}
+	
+	&-bordered {
+		border: 1px solid $border-color;
+		
+		.tabs {
+			
+			&-link {
+				padding-top: 10px;
+			}
+			&-content {
+				padding: $margin;
+			}
+		}
+	}
+}

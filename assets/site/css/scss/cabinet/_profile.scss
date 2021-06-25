@@ -1,0 +1,19 @@
+.cabinet-profile {
+	
+	&-blocks {
+		> li {
+			margin-bottom: 50px;
+			&:last-child {margin: 0;}
+		}
+	}
+	
+	&-photo {
+		max-width: 150px;
+		margin: 0 0 30px;
+		
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,72 @@
+/* FORM STUFF
+------------------------------------------------------------------------ */
+
+.form-group {
+	margin-bottom: $margin;
+}
+
+
+/* FORM ELEEMTS
+------------------------------------------------------------------------ */
+
+.form-caption {
+	display: block;
+	@include font($font-size, 500, $font-line);
+	margin-bottom: $margin / 2;
+}
+
+.form-label {
+	@include inline;
+	@include font($font-size, 500, $font-line);
+}
+
+.form-labelblock {
+	display: block;
+	min-height: 100%;
+	padding-top: 9px;
+	@include font($font-size, 500, $font-line);
+	
+	&-checker {
+		padding-top: 0;
+	}
+}
+
+.form-info {
+	margin-top: $margin / 4;
+	@include font($font-size-xs, 500, $font-line, $color-gray-lite);
+}
+
+.form-error {
+	margin-top: $margin / 4;
+	@include font($font-size-xs, 600, $font-line, $color-error);
+}
+
+.form-actions {
+	margin-top: $margin;
+	padding-top: $margin;
+	border-top: 1px solid $border-color;
+}
+
+@media (max-width: 992px) {
+	.form-labelblock {
+		padding: 0;
+		margin-bottom: $margin / 2;
+	}
+}
+
+label {
+	&.form-caption,
+	&.form-label,
+	&.form-labelblock
+	{
+		cursor: pointer;
+	}
+}
+
+
+/* HELPERS
+------------------------------------------------------------------------ */
+
+.required {
+	@include font(null, 700, null, $color-error);
+}

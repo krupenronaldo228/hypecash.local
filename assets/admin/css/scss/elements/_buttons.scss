@@ -1,0 +1,230 @@
+/* DEFAULT SETTINGS
+------------------------------------------------------------------------ */
+
+.btn {
+	display: inline-block;
+	vertical-align: middle;
+	height: $form-height;
+	padding: 0 15px;
+	@include font(null, 500, $form-height, $color);
+	@include text(center, none);
+	background: $border-color;
+	@include transition;
+	cursor: pointer;
+	
+	&:hover {background: darken($border-color, 8%);}
+}
+
+
+/* COLORS
+------------------------------------------------------------------------ */
+
+.btn {
+	&-info {
+		background: $color-info;
+		color: #fff;
+		&:hover {background: darken($color-info, 8%);}
+	}
+	&-success {
+		background: $color-success;
+		color: #fff;
+		&:hover {background: darken($color-success, 8%);}
+	}
+	&-warning {
+		background: $color-warning;
+		color: #fff;
+		&:hover {background: darken($color-warning, 8%);}
+	}
+	&-error {
+		background: $color-error;
+		color: #fff;
+		&:hover {background: darken($color-error, 8%);}
+	}
+	
+	&-gray {
+		background: $color-gray-btn;
+		color: #fff;
+		&:hover {background: darken($color-gray-btn, 8%);}
+	}
+	&-dark {
+		background: $sidenav-color;
+		color: #fff;
+		&:hover {background: lighten($sidenav-color, 8%);}
+	}
+	&-black {
+		background: $color-black;
+		color: #fff;
+		&:hover {background: lighten($color-black, 15%);}
+	}
+	&-blue {
+		background: $color-blue;
+		color: #fff;
+		&:hover {background: darken($color-blue, 8%);}
+	}
+	&-azure {
+		background: $color-azure;
+		color: #fff;
+		&:hover {background: darken($color-azure, 8%);}
+	}
+	&-space {
+		background: $color-space;
+		color: #fff;
+		&:hover {background: darken($color-space, 8%);}
+	}
+	&-green {
+		background: $color-green;
+		color: #fff;
+		&:hover {background: darken($color-green, 8%);}
+	}
+	&-emerald {
+		background: $color-emerald;
+		color: #fff;
+		&:hover {background: darken($color-emerald, 12%);}
+	}
+	&-meadow {
+		background: $color-meadow;
+		color: #fff;
+		&:hover {background: darken($color-meadow, 8%);}
+	}
+	&-orange {
+		background: $color-orange;
+		color: #fff;
+		&:hover {background: darken($color-orange, 8%);}
+	}
+	&-yellow {
+		background: $color-yellow;
+		color: #fff;
+		&:hover {background: darken($color-yellow, 8%);}
+	}
+	&-brown {
+		background: $color-brown;
+		color: #fff;
+		&:hover {background: darken($color-brown, 8%);}
+	}
+	&-red {
+		background: $color-red;
+		color: #fff;
+		&:hover {background: darken($color-red, 8%);}
+	}
+	&-flamingo {
+		background: $color-flamingo;
+		color: #fff;
+		&:hover {background: darken($color-flamingo, 8%);}
+	}
+	&-fire {
+		background: $color-fire;
+		color: #fff;
+		&:hover {background: darken($color-fire, 8%);}
+	}
+	&-purple {
+		background: $color-purple;
+		color: #fff;
+		&:hover {background: darken($color-purple, 8%);}
+	}
+	&-pink {
+		background: $color-pink;
+		color: #fff;
+		&:hover {background: darken($color-pink, 8%);}
+	}
+	&-plum {
+		background: $color-plum;
+		color: #fff;
+		&:hover {background: darken($color-plum, 8%);}
+	}
+	
+	
+	&-tolerant {
+		background: rgb(255,0,0);
+		background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 15.999%, rgba(255,152,0,1) 16%, rgba(255,152,0,1) 32.999%, rgba(255,255,0,1) 33%, rgba(255,255,0,1) 49.999%, rgba(0,152,0,1) 50%, rgba(0,152,0,1) 65.999%, rgba(0,0,255,1) 66%, rgba(0,0,255,1) 82.999%, rgba(152,0,152,1) 83%, rgba(152,0,152,1) 100%);
+		@include font(null, 700, null, #fff);
+		text-transform: uppercase;
+		text-shadow: 2px 1px 4px #000;
+		
+		&:hover {
+			background: rgb(255,0,0);
+			background: linear-gradient(-90deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 15.999%, rgba(255,152,0,1) 16%, rgba(255,152,0,1) 32.999%, rgba(255,255,0,1) 33%, rgba(255,255,0,1) 49.999%, rgba(0,152,0,1) 50%, rgba(0,152,0,1) 65.999%, rgba(0,0,255,1) 66%, rgba(0,0,255,1) 82.999%, rgba(152,0,152,1) 83%, rgba(152,0,152,1) 100%);
+		}
+	}
+}
+
+
+/* SIZES
+------------------------------------------------------------------------ */
+
+.btn {
+	&-xs {
+		height: $form-height-xs;
+		@include font($font-size-xs, null, $form-height-xs);
+		padding: 0 10px;
+	}
+	&-sm {
+		height: $form-height-sm;
+		@include font($font-size-sm, null, $form-height-sm);
+	}
+	&-lg {
+		height: $form-height-lg;
+		@include font($font-size-lg, null, $form-height-lg);
+		padding: 0 20px;
+	}
+	&-xl {
+		height: $form-height-xl;
+		@include font($font-size-xl, null, $form-height-xl);
+		padding: 0 25px;
+	}
+}
+
+
+/* ICON
+------------------------------------------------------------------------ */
+
+.btn-icon {
+	width: $form-height;
+	padding: 0;
+	font-size: 18px;
+	
+	&.btn {
+		&-xs {
+			width: $form-height-xs;
+			font-size: 13px;
+		}
+		&-sm {
+			width: $form-height-sm;
+			font-size: 15px;
+		}
+		&-lg {
+			width: $form-height-lg;
+			font-size: 22px;
+		}
+		&-xl {
+			width: $form-height-xl;
+			font-size: 28px;
+		}
+	}
+}
+
+
+/* CUSTOM
+------------------------------------------------------------------------ */
+
+.btn {
+	
+	&-disabled, &[disabled] {
+		opacity: 0.8;
+		cursor: not-allowed;
+	}
+}
+
+/* BTNS GROUP
+------------------------------------------------------------------------ */
+
+.btns {
+	
+	&-list {
+		@include flex;
+		
+		> * {
+			margin: 0 8px 8px 0;
+			&:last-child {margin-right: 0;}
+		}
+	}
+}

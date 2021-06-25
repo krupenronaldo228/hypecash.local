@@ -1,0 +1,92 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, 
+form, input, textarea, button, select, option,
+ul, li, ol, img, p, hr, 
+table, tr, td, thead, tbody, tfoot 
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html, body {
+	@include size(100%, 100%);
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	
+	@include font($font-size, null, null, $color, $font);
+	
+	&.overflow {
+		overflow: hidden;
+		border-right: 12px solid #eaeaea;
+	}
+}
+
+input, textarea, button, select {
+	@include font($font-size, null, null, $color, $font);
+}
+
+button {cursor: pointer;}
+
+a {
+	color: $color-link;
+	text-decoration: underline;
+	&:hover {text-decoration: none;}
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+ul, ol, li {
+	list-style: none;
+}
+
+::-webkit-input-placeholder {
+	@include font($font-size, null, null, $color-gray-lite, $font);
+}
+
+:-moz-placeholder {
+	@include font($font-size, null, null, $color-gray-lite, $font);
+}
+
+:focus {
+	outline: 0;
+}
+
+::selection {
+	color: $color-white;
+	background: $color-link;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+	
+	&-track {
+		border-radius: 0;
+		box-shadow: none;
+		border: 0;
+		background-color: #eaeaea;
+		border-left: 1px solid #cecece;
+	}
+	&-thumb {
+		border-radius: 0;
+		box-shadow: none;
+		border: 0;
+		background-color: #cecece;
+		
+		&:hover {
+			background-color: #aaaaaa;
+		}
+	}
+}

@@ -1,0 +1,94 @@
+/* HEADERS
+------------------------------------------------------------------------ */
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	margin: 0;
+}
+
+h1, .h1 {@include font($font-h1, null, $font-line-xs);}
+h2, .h2 {@include font($font-h2, null, $font-line-xs);}
+h3, .h3 {@include font($font-h3, null, $font-line-xs);}
+h4, .h4 {@include font($font-h4, null, $font-line-xs);}
+h5, .h5 {@include font($font-h5, null, $font-line-xs);}
+h6, .h6 {@include font($font-h6, null, $font-line-xs);}
+
+
+/* FONT SIZE
+------------------------------------------------------------------------ */
+
+@each $_size in (12, 13, 14, 15, 16, 18, 20, 22, 24, 26, 30) {
+.font-#{$_size} {font-size: #{$_size}px;}
+}
+
+small, .small {font-size: $font-small;}
+.smaller {font-size: $font-smaller;}
+
+big, .big {font-size: $font-big;}
+.bigger {font-size: $font-bigger;}
+
+sub {vertical-align: sub; font-size: $font-smaller;}
+sup {vertical-align: super; font-size: $font-smaller;}
+
+
+/* FONT WEIGHT & STYLE
+------------------------------------------------------------------------ */
+
+.light {font-weight: 300;}
+.regular {font-weight: 400;}
+.medium {font-weight: 500;}
+.semibold {font-weight: 600;}
+.bold {font-weight: 700;}
+
+.italic {font-style: italic;}
+
+
+/* ALIGN, TRANSFORM, DECORATION
+------------------------------------------------------------------------ */
+
+@each $align in left, right, center, justify {
+	.text-#{$align} {text-align: $align;}
+}
+
+@each $transform in uppercase, lowercase, capitalize  {
+	.#{$transform} {text-transform: $transform;}
+}
+.notransform {text-transform: none;}
+
+.underline {text-decoration: underline;}
+.linethrough {text-decoration: line-through;}
+
+
+/* LINE-HEIGHT
+------------------------------------------------------------------------ */
+
+.line-height {line-height: $font-line;}
+.line-height-xl {line-height: $font-line-xl;}
+.line-height-xs {line-height: $font-line-xs;}
+.line-height-1 {line-height: 1;}
+
+
+/* LINKS
+------------------------------------------------------------------------ */
+
+.link {
+	text-decoration: underline;
+	&:hover {text-decoration: none;}
+}
+
+.link-reverse {
+	text-decoration: none;
+	&:hover {text-decoration: underline;}
+}
+
+
+/* CODE
+------------------------------------------------------------------------ */	
+
+code {
+	@include inline;
+	@include font($font-size-xs, 700, $font-line, $color-brown, 'Courier New');
+	border: 1px solid $color-warning;
+	background: $color-mute-warning;
+	padding: 3px 8px;
+}

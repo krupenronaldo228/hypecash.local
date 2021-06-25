@@ -1,0 +1,147 @@
+/* DEFAULT SETTINGS
+------------------------------------------------------------------------ */
+
+.list {
+	margin-bottom: $margin;
+	
+	> li {
+		margin-bottom: 8px;
+		&:last-child {margin-bottom: 0;}
+	}
+}
+
+.list-ul,
+.list-ul-circle,
+.list-ul-square,
+.list-ol,
+.list-ol-roman,
+.list-ol-alpha,
+.list-ol-alpha-upper {
+	padding-left: 25px;
+	
+	> li {
+		list-style: inherit;
+	}
+}
+
+.list-ul {
+	list-style: disc outside;
+	
+	&-circle {list-style: circle outside;}
+	&-square {list-style: square outside;}
+}
+
+.list-ol {
+	list-style: decimal outside;
+	
+	&-roman {list-style: upper-roman outside;}
+	&-alpha {list-style: lower-alpha outside;}
+	&-alpha-upper {list-style: upper-alpha outside;}
+}
+
+
+/* CUSTOM LISTS
+------------------------------------------------------------------------ */
+
+.list-fa {
+	&-check,
+	&-times,
+	&-arrow,
+	&-chevron,
+	&-info,
+	&-question,
+	&-quote,
+	&-warning,
+	&-custom {
+		> li {
+			position: relative;
+			padding-left: 25px;
+			
+			&:before {
+				content: "";
+				display: block;
+				@include position(absolute, 0, 0);
+				@include font(null, 700, inherit, $color, $font-awesome);
+				width: 20px;
+				text-align: center;
+			}
+		}
+	}
+	
+	&-check > li:before {content: "\f00c";}
+	&-times > li:before {content: "\f00d";}
+	&-arrow > li:before {content: "\f061";}
+	&-chevron > li:before {content: "\f054";}
+	&-info > li:before {content: "\f129";}
+	&-question > li:before {content: "\f128";}
+	&-warning > li:before {content: "\f12a";}
+	&-quote > li:before {content: "\f10e";}
+}
+
+
+/* COLOR LISTS
+------------------------------------------------------------------------ */
+
+.list {
+	&-info > li:before {color: $color-info;}
+	&-success > li:before {color: $color-success;}
+	&-warning > li:before {color: $color-warning;}
+	&-error > li:before {color: $color-error;}
+}
+
+
+/* CUSTOM LI
+------------------------------------------------------------------------ */
+
+li.li {
+	&-check:before {content: "\f00c";}
+	&-times:before {content: "\f00d";}
+	&-arrow:before {content: "\f061";}
+	&-chevron:before {content: "\f054";}
+	&-info:before {content: "\f129";}
+	&-question:before {content: "\f128";}
+	&-warning:before {content: "\f12a";}
+	&-quote:before {content: "\f10e";}
+	
+	&-color {
+		&-info:before {color: $color-info;}
+		&-success:before {color: $color-success;}
+		&-warning:before {color: $color-warning;}
+		&-error:before {color: $color-error;}
+	}
+}
+
+li.li-divider {
+	list-style: none $imp;
+	border-top: 1px solid $border-color;
+	margin: {
+		top: 10px;
+		bottom: 10px;
+	}
+	
+	&:before {display: none $imp;}
+}
+
+li.li-title {
+	@include font($font-size, 600, $font-line-xs);
+	list-style: none $imp;
+	padding: 0;
+	margin: {
+		top: 15px;
+		bottom: 10px;
+	}
+	
+	&:before {display: none $imp;}
+}
+
+
+/* CUSTOM SETTINGS
+------------------------------------------------------------------------ */
+
+.list-inline {
+	@include flex(flex-start);
+	
+	> li {
+		margin: 0 40px 10px 0;
+	}
+}

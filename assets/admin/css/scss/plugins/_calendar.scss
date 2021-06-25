@@ -1,0 +1,153 @@
+/* DEFAULT SETTINGS
+------------------------------------------------------------------------ */
+
+.datepicker {
+	display: inline-block;
+	border: 1px solid $border-color;
+	max-width: 100%;
+	width: 350px;
+	background: #fff;
+	
+	&-dropdown {
+		position: absolute;
+		z-index: 1000;
+		box-shadow: 0 0 10px rgba(#000, 0.15);
+	}
+	
+	&-table {
+		width: 100%;
+		
+		td, th {
+			padding: 0;
+		}
+	}
+	
+	&-inline {
+		
+	}
+	
+	&-days {
+		.dow {
+			padding: 8px 5px;
+			@include font($font-size-sm, 700, 15px);
+			text-align: center;
+		}
+		.day {
+			padding: 10px 5px;
+			@include font($font-size, 500, 20px);
+			text-align: center;
+			
+			&:hover {
+				background: $body-color;
+				cursor: pointer;
+			}
+			
+			&.old, &.new {
+				@include font(null, 400, null, $color-gray-lite);
+			}
+			
+			&.today {
+				@include font(null, 700, null, $color-white);
+				background: $color-info;
+			}
+			
+			&.active {
+				@include font(null, 700, null, $color-white);
+				background: $color-success;
+			}
+			
+			&.disabled {
+				color: $color-gray-lite;
+				background: transparent;
+				cursor: not-allowed;
+			}
+		}
+	}
+	
+	&-weekdays {
+		border-bottom: 1px solid $border-color;
+	}
+	
+	&-months {
+		&-list {
+			@include flex;
+			
+			a {
+				@include flex(center, center);
+				width: 25%;
+				@include font($font-size, null, 20px, $color);
+				@include text(center, none);
+				padding: 10px 5px;
+			
+				&:hover {
+					background: $body-color;
+					cursor: pointer;
+				}
+				&.focused {
+					@include font(null, 700, null, $color-white);
+					background: $color-success;
+				}
+				&.disabled {
+					color: $color-gray-lite;
+					background: transparent;
+					cursor: not-allowed;
+				}
+			}
+		}
+	}
+	
+	&-years {
+		&-list {
+			@include flex;
+			
+			a {
+				@include flex(center, center);
+				width: 25%;
+				@include font($font-size, null, 20px, $color);
+				@include text(center, none);
+				padding: 10px 5px;
+			
+				&:hover {
+					background: $body-color;
+					cursor: pointer;
+				}
+				&.focused {
+					@include font(null, 700, null, $color-white);
+					background: $color-success;
+				}
+				&.disabled {
+					color: $color-gray-lite;
+					background: transparent;
+					cursor: not-allowed;
+				}
+			}
+		}
+	}
+	
+	&-navs {
+		border-bottom: 2px solid $border-color;
+	}
+	&-switch {
+		@include flex(center, center);
+		@include size(100%, 40px);
+		@include font($font-size, 600, null, $color);
+		@include text(center, none);
+		@include transition;
+		
+		&:hover {
+			background: $body-color;
+		}
+	}
+	&-nav {
+		@include flex(center, center);
+		@include size(100%, 40px);
+		@include font($font-size, null, null, $color-gray);
+		@include text(center, none);
+		@include transition;
+		
+		&:hover {
+			background: $body-color;
+			color: $color;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+/* FORM-STUFF 
+--------------------------------------------------------*/
+
+.form {
+	&-group {margin-bottom: $form-margin;}
+	
+	&-caption {
+		@include font(14px, 700, 16px);
+		margin-bottom: $form-submargin;
+	}
+	
+	&-info {
+		margin-top: $form-submargin;
+		font-size: 12px;
+		color: $color-gray;
+	}
+	
+	&-error {
+		margin-top: $form-submargin;
+		@include font(12px, 400);
+		color: $color-error;
+	}
+	
+	&-label {@include inline;}
+}

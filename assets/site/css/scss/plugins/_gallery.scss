@@ -1,0 +1,112 @@
+.vix {
+	
+	&-overlay {
+		display: none;
+		@include position(fixed, 0, 0, null, null, 1000);
+		@include size(100%, 100%);
+		padding: 30px 50px;
+		background: rgba(#000, 0.7);
+		cursor: pointer;
+		overflow: {
+			x: hidden;
+			y: auto;
+		};
+	}
+	
+	&-modal {
+		position: relative;
+		@include size(auto, 100%);
+		padding: 30px 0;
+		background: rgba(#000, 0.7);
+		cursor: pointer;
+	}
+	
+	&-image {
+		
+		&-wrap {
+			position: relative;
+			@include flex(center, center);
+			height: 100%;
+			
+			> img {
+				display: none;
+				max: {
+					@include size(100%, 100%);
+				}
+			}
+		}
+	}
+	
+	&-loader {
+		@include position(absolute, 50%, 50%);
+		@include size(43px, 11px);
+		margin: -6px 0 0 -21px;
+		background: url('/assets/plugins/vix-gallery/img/loader.gif') no-repeat center;
+	}
+	
+	&-title {
+		@include position(absolute, 20px, 10px, null, null, 5);
+		@include font(14px, null, 20px, #dfdfdf);
+	}
+	
+	&-btn {
+		@include position(absolute, 50%, 0, null, null, 2);
+		@include size(50%, 100%);
+		background: transparent;
+		opacity: 0.7;
+		@include transition;
+		
+		&:before {
+			content: '';
+			display: block;
+			@include position(absolute, null, 50%);
+			@include size(17px, 29px);
+			margin-top: -15px;
+			background: url('/assets/plugins/vix-gallery/img/navs.png') no-repeat;
+		}
+		
+		&-prev {
+			left: 0;
+			
+			&:before {
+				left: 20px;
+			}
+		}
+		&-next {
+			right: 0;
+			
+			&:before {
+				right: 20px;
+				background-position: right center;
+			}
+		}
+		
+		&:hover {
+			opacity: 1;
+		}
+	}
+	
+	&-close {
+		@include position(absolute, null, 0, 0, null, 5);
+		@include size(50px, 50px);
+		background: url('/assets/plugins/vix-gallery/img/close.png') no-repeat center;
+		opacity: 0.7;
+		@include transition;
+		cursor: pointer;
+		
+		&:hover {
+			opacity: 1;
+		}
+	}
+	
+	&-caption {
+		display: none;
+	}
+}
+
+
+@media (max-width: 768px) {
+	.vix-overlay {
+		padding: 0;
+	}
+}

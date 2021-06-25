@@ -1,0 +1,61 @@
+/* DEFAULT SETTINGS
+------------------------------------------------------------------------ */
+
+.flag {
+	@include flex(center, center);
+	@include size(30px, 20px);
+	
+	img {
+		display: block;
+		@include size(100%, 100%);
+	}
+	
+	&-xs {
+		@include size(15px, 10px);
+	}
+	&-sm {
+		@include size(20px, 13px);
+	}
+	&-lg {
+		@include size(45px, 30px);
+	}
+	&-xl {
+		@include size(60px, 40px);
+	}
+}
+
+
+/* LIST
+------------------------------------------------------------------------ */
+
+.flag-list {
+	@include flex(stretch);
+	margin-bottom: $margin;
+	
+	> li {
+		margin: 0 20px 20px 0;
+	}
+}
+
+.flag-demo {
+	border: 1px solid $border-color;
+	width: 100px;
+	
+	&-img {
+		@include flex(center, center);
+		height: 70px;
+		padding: 5px;
+		
+		img {
+			display: block;
+			@include size(100%, 100%);
+		}
+	}
+	&-title {
+		border-top: 1px solid $border-color;
+		padding: 5px 10px;
+		font-weight: 600;
+		text-align: center;
+		background: $body-color;
+	}
+}

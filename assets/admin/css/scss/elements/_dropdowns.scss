@@ -1,0 +1,80 @@
+/* DROPHOVER
+------------------------------------------------------------------------ */
+
+.drophover {
+	position: relative;
+	@include inline;
+	
+	&-btn {
+		
+	}
+	&-menu {
+		display: none;
+		@include position(absolute, 0, 100%, null, null, 100);
+		min-width: 175px;
+		width: 100%;
+		border: 1px solid $form-border;
+		background: #fff;
+		
+		&-bottom-right {
+			@include position(null, auto, 100%, 0);
+		}
+		&-top {
+			@include position(null, 0, auto, null, 100%);
+		}
+		&-top-right {
+			@include position(null, auto, auto, 0, 100%);
+		}
+		&-left {
+			@include position(null, auto, 0, 100%);
+		}
+		&-right {
+			@include position(null, 100%, 0);
+		}
+	}
+	
+	&-list {
+		&-item {
+			position: relative;
+			display: block;
+			padding: 10px 15px 10px 45px;
+			@include font($font-size, null, $font-line, $color-gray);
+			text-decoration: none;
+			@include transition;
+			
+			> .fa5 {
+				@include position(absolute, 15px, 10px);
+				@include font($font-size-lg, null, inherit);
+			}
+			
+			&:hover {
+				background: $body-color;
+			}
+		}
+		&-divider {
+			border-top: 1px solid $border-color;
+		}
+		
+	}
+	
+	&:hover {
+		.drophover-menu {display: block;}
+	}
+}
+
+.drophover-menu-xs {
+	min-width: 125px;
+	
+	.drophover-list {
+		&-item {
+			padding: 5px 10px 5px 30px;
+			font-size: $font-size-sm;
+			
+			> .fa5 {
+				@include position(null, 8px, 5px);
+				font-size: $font-size-sm;
+			}
+		}
+	}
+	
+}

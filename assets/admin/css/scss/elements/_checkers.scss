@@ -1,0 +1,275 @@
+/* DEFAULT SETTINGS
+------------------------------------------------------------------------ */
+
+.checker {
+	position: relative;
+	@include inline;
+	@include size(20px, 20px);
+	
+	input {
+		display: block;
+		@include position(absolute, 0, 0, null, null, 5);
+		@include size(100%, 100%);
+		opacity: 0;
+		cursor: pointer;
+	
+		&:hover {
+			+ .checker-view {
+				border-color: darken($form-border, 15%);
+			}
+		}
+		
+		&[disabled] {
+			+ .checker-view {
+				background: $color-disabled;
+				border-color: $form-border;
+				cursor: not-allowed;
+			}
+		}
+	}
+	
+	&-view {
+		@include flex(center, center);
+		@include position(absolute, 0, 0, null, null, 2);
+		@include size(100%, 100%);
+		border: 1px solid $form-border;
+		@include transition;
+	}
+	
+	input[type="checkbox"] {
+		
+		&:checked {
+			+ .checker-view {
+			
+				&:before {
+					content: "\f00c";
+					display: block;
+					@include font(11px, 700, 1, $color-gray, $font-awesome);
+				}
+			}
+		}
+		
+		&[disabled] {
+			+ .checker-view:before {color: $color-gray-lite;}
+		}
+		
+		&.checker-style {
+		
+			&-times:checked {
+				+ .checker-view {
+					&:before {
+						content: "\f00d";
+					}
+				}
+			}
+			
+			&-square:checked {
+				+ .checker-view {
+					&:before {
+						content: "\f0c8";
+						font-size: 8px;
+					}
+				}
+			}
+			
+			&-plus {
+				&:checked {
+					+ .checker-view {
+						&:before {
+							content: "\f067";
+						}
+					}
+				}
+			}
+			
+			&-thumb {
+				&:checked {
+					+ .checker-view {
+						&:before {
+							content: "\f164";
+							@include font(10px, 400);
+						}
+					}
+				}
+			}
+		}
+		
+		&.checker-color {
+		
+			&-info + .checker-view:before {color: $color-info;}
+			&-success + .checker-view:before {color: $color-success;}
+			&-warning + .checker-view:before {color: $color-warning;}
+			&-error + .checker-view:before {color: $color-error;}
+		}
+		
+	}
+	
+	input[type="radio"] {
+	
+		+ .checker-view {
+			border-radius: 100%;
+		}
+		
+		&:checked {
+			+ .checker-view:before {
+				content: "";
+				display: block;
+				@include size(8px, 8px);
+				border-radius: 100%;
+				background: $color-gray;
+			}
+		}
+		
+		&[disabled] {
+			+ .checker-view:before {background: $color-gray-lite;}
+		}
+		
+		&.checker-color {
+		
+			&-info + .checker-view:before {background: $color-info;}
+			&-success + .checker-view:before {background: $color-success;}
+			&-warning + .checker-view:before {background: $color-warning;}
+			&-error + .checker-view:before {background: $color-error;}
+		}
+		
+	}
+	
+}
+
+/* TOGGLER SETTINGS
+------------------------------------------------------------------------ */
+
+.toggler {
+	position: relative;
+	@include inline;
+	@include size(35px, 20px);
+	overflow: hidden;
+	
+	input {
+		display: block;
+		@include position(absolute, 0, 0, null, null, 5);
+		@include size(35px, 35px);
+		opacity: 0;
+		cursor: pointer;
+	
+		&:hover {
+			+ .toggler-view {
+				&:after {
+					border-color: darken($form-border, 10%);
+				}
+			}
+		}
+		
+		&[disabled] {
+			+ .toggler-view {
+				opacity: 0.8;
+				cursor: not-allowed;
+			}
+		}
+	}
+	
+	&-view {
+		@include position(absolute, 0, 0);
+		@include size(100%, 100%);
+		border: 1px solid $form-border;
+		border-radius: 20px;
+		@include transition;
+		background: #fff;
+		
+		&:before {
+			content: "";
+			display: block;
+			@include position(absolute, 0, 0);
+			@include size(100%, 100%);
+			background: $color-disabled;
+			border-radius: 20px;
+			@include transition;
+		}
+		
+		&:after {
+			content: "";
+			display: block;
+			@include position(absolute, -1px, -1px, null, null, 3);
+			@include size(20px, 20px);
+			border: 1px solid $form-border;
+			background: #fff;
+			border-radius: 100%;
+			@include transition;
+		}
+	}
+	
+	input:checked {
+		
+		+ .toggler-view {
+			
+			&:after {
+				left: 14px;
+			}
+			&:before {
+				background: $form-border;
+			}
+		}
+	}
+	input.toggler-color {
+		&-info:checked + .toggler-view:before {background: $color-info;}
+		&-success:checked + .toggler-view:before {background: $color-success;}
+		&-warning:checked + .toggler-view:before {background: $color-warning;}
+		&-error:checked + .toggler-view:before {background: $color-error;}
+	}
+}
+
+
+/* ELEMENTS FOR CHECKERS
+------------------------------------------------------------------------ */
+
+.checkers-list {
+	margin-bottom: $margin;
+	
+	> li {
+		margin-bottom: 10px;
+		&:last-child {margin: 0;}
+	}
+}
+
+.checkers-inline {
+	@include flex(flex-start);
+	margin: 0 -10px 10px;
+	
+	> li {
+		padding: 0 10px 10px;
+	}
+}
+
+.checkers-label {
+	display: block;
+	position: relative;
+	padding-left: 30px;
+	line-height: 22px;
+	@include transition;
+	
+	&:hover {
+		color: $color-gray;
+		cursor: pointer;
+	}
+	
+	.checker {
+		@include position(absolute, 0, 1px);
+	}
+}
+
+.checkers-toggler {
+	display: block;
+	position: relative;
+	padding-left: 45px;
+	line-height: 22px;
+	@include transition;
+	
+	&:hover {
+		color: $color-gray;
+		cursor: pointer;
+	}
+	
+	.toggler {
+		@include position(absolute, 0, 0);
+	}
+}

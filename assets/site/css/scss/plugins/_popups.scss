@@ -1,0 +1,74 @@
+.popup {
+	position: relative;
+	z-index: 5;
+	top: -30px;
+	max-width: 350px;
+	padding: 25px 35px;
+	background: #fff;
+	margin: 0 auto;
+	display: none;
+	opacity: 0;
+	@include transition;
+	
+	&.show {
+		top: 0;
+		opacity: 1;
+	}
+	
+	&-container {
+		display: none;
+		@include position(fixed, 0, 0, null, null, 1000);
+		@include size(100%, 100%);
+		padding: 30px 10px;
+		background: rgba(#000, 0.7);
+		overflow: auto;
+		
+		.popup {
+			display: block;
+		}
+	}
+}
+
+.popup-close {
+	@include flex(center, center);
+	@include position(absolute, null, 0, 0);
+	@include size(40px, 40px);
+	@include font(16px, null, null, $color-gray-lite);
+	@include text(center, none);
+	@include transition;
+	
+	&:hover {color: $color;}
+}
+
+.popup-top {
+	text-align: center;
+	
+	.title {
+		@include font(20px, 700, 25px);
+		text-transform: uppercase;
+	}
+	.brief {
+		@include font(null, null, 21px, $color-gray-lite);
+		margin-top: 5px;
+	}
+	
+}
+
+.popup-form {
+	margin-top: 20px;
+	
+	.inputs {
+		> li {
+			margin-bottom: 10px;
+			&:last-child {margin: 0;}
+		}
+	}
+	.actions {
+		margin-top: 15px;
+		text-align: center;
+		
+		.btn {
+			width: 100%;
+		}
+	}
+}

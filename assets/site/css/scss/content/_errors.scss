@@ -1,0 +1,31 @@
+.errors {
+	padding: 50px 0 100px;
+}
+
+.errors-content {
+	@include flex(center);
+	flex-direction: row-reverse;
+	padding: 0 150px;
+	
+	.descr {
+		width: 100%;
+		padding-right: 450px;
+		margin-right: -355px;
+	}
+	
+	.title {
+		@include font(35px, 700, 40px);
+	}
+	.text {
+		@include font(18px, null, 28px);
+		margin-top: 15px;
+	}
+	.bottom {
+		margin-top: 25px;
+	}
+	
+	.img {
+		@include size(353px, 320px);
+		background: url('../img/404.png') no-repeat center;
+	}
+}

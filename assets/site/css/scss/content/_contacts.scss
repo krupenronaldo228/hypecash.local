@@ -1,0 +1,79 @@
+.contacts-map {
+	border: 1px solid $border-color;
+	padding: 2px;
+	margin-bottom: 30px;
+	
+	iframe {
+		display: block;
+		width: 100%;
+	}
+}
+
+.contacts-content {
+	@include flex(flex-start);
+	
+	&-left {
+		width: 100%;
+		padding-right: 500px;
+		margin-right: -400px;
+	}
+	&-right {
+		width: 400px;
+	}
+}
+
+.contacts-title {
+	@include font(20px, 700, 25px);
+	text-transform: uppercase;
+	margin-bottom: 25px;
+}
+
+.contacts-info {
+	> li {
+		margin-bottom: 15px;
+		&:last-child {margin: 0;}
+	}
+	
+	.item {
+		position: relative;
+		padding-left: 30px;
+		line-height: 22px;
+		
+		> .fa5 {
+			@include position(absolute, 0, 0);
+			@include font(15px, null, inherit, $color-link);
+		}
+	}
+	
+	.phones {
+		
+	}
+	
+	.phone {
+		@include font(16px, null, null, $color);
+		text-decoration: none;
+	}
+	.email {
+		color: inherit;
+	}
+}
+
+.contacts-form {
+	background: #f2f2f2;
+	padding: 25px 30px;
+	
+	.inputs {
+		> li {
+			margin-bottom: 10px;
+			&:last-child {margin: 0;}
+		}
+	}
+	.actions {
+		margin-top: 15px;
+		
+		.text {
+			margin-bottom: 10px;
+			@include font(12px, null, 16px, $color-gray);
+		}
+	}
+}

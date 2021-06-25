@@ -1,0 +1,44 @@
+/* CONTENT
+------------------------------------------------------------------------ */
+
+.content {
+	flex-grow: 1;
+	padding: 15px 0 50px;
+}
+
+.page {
+	&-content {}
+	
+	&-top {
+		margin-bottom: 30px;
+	}
+	
+	&-title {
+		@include font(30px, 700, 34px);
+	}
+	
+	&-brief {
+		margin-top: 10px;
+		@include font(14px, null, 20px, $color-gray);
+	}
+	&-text {
+		margin-top: 50px;
+	}
+	
+	&-error {
+		margin-bottom: 30px;
+	}
+	
+	
+	&-bottom {
+		margin-top: 30px;
+		@include flex(center, space-between);
+		flex-direction: row-reverse;
+	}
+	&-social {
+		
+	}
+	&-return {
+	
+	}
+}

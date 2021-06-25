@@ -1,0 +1,47 @@
+.reviews-list {
+	
+	> li {
+		margin-bottom: 40px;
+		&:last-child {margin: 0;}
+	}
+}
+
+.reviews-item {
+	@include flex(flex-start);
+	
+	.image {
+		position: relative;
+		z-index: 5;
+		width: 150px;
+		margin-right: -150px;
+		
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+	.description {
+		width: 100%;
+		padding-left: 180px;
+	}
+	
+	.date {
+		@include font(13px, null, 1, $color-gray-lite);
+		margin-top: 10px;
+		
+		.fa5 {margin-right: 5px;}
+	}
+	
+	.title {
+		@include font(18px, 700, 1.3);
+	}
+	
+	.text {
+		color: $color-gray;
+		margin-top: 10px;
+	}
+	
+	.link {
+		margin-top: 5px;
+	}
+}

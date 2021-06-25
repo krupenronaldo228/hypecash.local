@@ -1,0 +1,116 @@
+/* ALL RESET
+------------------------------------------------------------------------ */
+
+*, :after, :before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, 
+form, input, textarea, button, select, option,
+ul, li, ol, img, p, hr, 
+table, tr, td, thead, tbody, tfoot 
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+
+/* BODY
+------------------------------------------------------------------------ */
+
+html, body {
+	@include size(100%, 100%);
+}
+
+body {
+	@include font($font-size, null, $font-line, $color, $font-family);
+	background: $body-color;
+	
+	&.overflow {
+		overflow: hidden;
+		margin-right: 12px;
+	}
+}
+
+::-webkit-scrollbar {
+	@include size(8px, 8px);
+	
+	&-track {
+		border-radius: 0;
+		box-shadow: none;
+		border: 0;
+		background-color: #eaeaea;
+		border-left: 1px solid #cecece;
+	}
+	
+	&-thumb {
+		border-radius: 0;
+		box-shadow: none;
+		border: 0;
+		background-color: #cecece;
+		
+		&:hover {
+			background-color: #aaaaaa;
+		}
+	}
+}
+
+
+/* TYPOGRAPHY
+------------------------------------------------------------------------ */
+
+a {
+	color: $color-info;
+	text-decoration: underline;
+	
+	&:hover {text-decoration: none;}
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+ul, ol, li {
+	list-style: none;
+}
+
+::selection {
+	color: $color-white;
+	background: $color-info;
+}
+
+
+/* INPUTS
+------------------------------------------------------------------------ */
+
+input, textarea, button, select {
+	@include font($font-size, null, null, $color, $font-family);
+}
+
+button {cursor: pointer;}
+
+a {
+	color: $color-info;
+	text-decoration: underline;
+	&:hover {text-decoration: none;}
+}
+
+::-webkit-input-placeholder {
+	font-family: $font-family;
+	font-size: $font-size;
+	color: $color-gray-lite;
+}
+
+:-moz-placeholder {
+	font-family: $font-family;
+	font-size: $font-size;
+	color: $color-gray-lite;
+}
+
+:focus {
+	outline: 0;
+}

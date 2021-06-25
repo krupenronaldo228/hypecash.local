@@ -1,0 +1,49 @@
+.wide {width: 100%;}
+.max-wide {max-width: 100%;}
+
+@for $i from 1 through 20 {
+	.w#{$i * 25} { width: 25px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.m#{$i * 5} { margin: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.mt#{$i * 5} { margin-top: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.mb#{$i * 5} { margin-bottom: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.ml#{$i * 5} { margin-left: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.mr#{$i * 5} { margin-right: 5px * $i $imp; }
+}
+
+@each $float in left, right {
+	.#{$float} {float: $float;}
+}
+
+@each $display in block, none {
+	.#{$display} {display: $display;}
+}
+
+.floater {
+	float: none $imp;
+	width: 0 $imp;
+	min-width: 0 $imp;
+	max-width: 0 $imp;
+	height: 0 $imp;
+	min-height: 0 $imp;
+	max-height: 0 $imp;
+	border: 0 $imp;
+	padding: 0 $imp;
+	margin: 0 $imp;
+	background: none $imp;
+	clear: both $imp;
+}

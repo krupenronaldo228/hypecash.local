@@ -1,0 +1,89 @@
+/* ALERTS
+------------------------------------------------------------------------ */
+
+.alert {
+	position: relative;
+	@include font($font-size, null, $font-line, $color);
+	padding: 18px 30px 18px 20px;
+	margin-bottom: $margin;
+	border: 1px solid $form-border;
+	background: $color-disabled;
+}
+
+
+/* NOTES
+------------------------------------------------------------------------ */
+
+.note {
+	position: relative;
+	@include font($font-size, null, $font-line, $color);
+	padding: 18px 20px;
+	margin-bottom: $margin;
+	border-left: 5px solid $form-border;
+	background: $color-disabled;
+}
+
+.note, .alert {
+	
+	&-info {
+		color: $color-space;
+		background: $color-mute-info;
+		border-color: $color-info;
+	}
+	
+	&-success {
+		color: $color-meadow;
+		background: $color-mute-success;
+		border-color: $color-success;
+	}
+	
+	&-warning {
+		color: $color-brown;
+		background: $color-mute-warning;
+		border-color: $color-warning;
+	}
+	
+	&-error {
+		color: $color-fire;
+		background: $color-mute-error;
+		border-color: $color-error;
+	}
+	
+	&-xs {
+		padding: 12px 30px 12px 15px;
+		@include font($font-size-sm, null, $font-line);
+	}
+	&-xl {
+		padding: 22px 30px 22px 30px;
+		font-size: $font-size-xl;
+	}
+	
+	&-title {
+		@include font($font-size-xl, 600);
+		margin-bottom: 10px;
+	}
+	&-text {
+		@include font($font-size-xs, null, $font-line-xl);
+		
+		> p {margin-bottom: 5px;}
+	
+		> *:last-child {margin-bottom: 0;}
+	}
+	
+	&-list {
+		@include font($font-size-xs, null, $font-line-xl);
+		margin: 10px 0 0 30px;
+		list-style: disc;
+		
+		> li {
+			margin-bottom: 3px;
+			list-style: inherit;
+			
+			&:last-child {margin: 0;}
+		}
+	}
+	
+	a {
+		@include font(null, 600, null, inherit);
+	}
+}

@@ -1,0 +1,14 @@
+.breadcrumbs {
+	@include font(12px, null, null, $color-gray-lite);
+	margin-bottom: 10px;
+	&-in {
+		@include ellipsis;
+	}
+	&-sep {
+		margin: 0 5px;
+		color: $color-link;
+	}
+	a {
+		color: $color-link;
+	}
+}

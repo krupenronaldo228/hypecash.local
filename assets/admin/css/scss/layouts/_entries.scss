@@ -1,0 +1,306 @@
+/* ENTRIES LIST
+------------------------------------------------------------------------ */
+
+.entries-table {
+	
+}
+
+.entries-td {
+	&-img {
+		width: 140px;
+		
+		.img {
+			@include flex(center, center);
+			width: 110px;
+			max-height: 70px;
+			
+			img {
+				max: {@include size(100%, 70px);}
+			}
+		}
+	}
+	&-icons {
+		white-space: nowrap;
+		
+		> * {
+			margin-left: 5px;
+			&:first-child {margin: 0;}
+		}
+	}
+}
+
+.entries-title {
+	@include font($font-size-lg, 600);
+}
+
+.entries-brief {
+	@include font($font-size-sm, null, null, $color-gray);
+}
+
+.entries-link {
+	max-width: 300px;
+	@include ellipsis;
+}
+
+.entries-social {
+	@include flex(center, center);
+	@include size(40px, 40px);
+	@include font(16px, null, null, #fff);
+	background: $color-info;
+	border-radius: 100%;
+}
+
+.entries-new {
+	width: 40px;
+	@include font(10px);
+}
+
+
+/* ENTRIES TREE
+------------------------------------------------------------------------ */
+
+.entries-tree {
+
+	&-item {
+		&.not_empty {
+			.entries-title {
+				cursor: pointer;
+				text-decoration: underline;
+				
+				&:hover {text-decoration: none;}
+			}
+		}
+		
+		&-open {
+			.entries-tree-toggle-close {display: none;}
+			.entries-tree-toggle-open {display: block;}
+		}
+	}
+	
+	&-toggles {
+		@include font(20px, null, 1);
+		width: 60px;
+	}
+	&-toggle {
+		position: relative;
+		
+		&-open {display: none;}
+		
+		&-counter {
+			@include position(absolute, -6px, -3px);
+			@include font(10px, 600, 1, #fff);
+			@include text(center, none);
+			padding: 3px 2px 3px;
+			min-width: 16px;
+			background: rgba(#000, 0.6);
+			border-radius: 15px;
+		}
+	}
+}
+
+
+/* ENTRIES SORT
+------------------------------------------------------------------------ */
+
+.entries-sort {
+	background: $body-color;
+	border: 1px solid $border-color;
+	margin-bottom: $margin;
+	
+	&-title {
+		display: block;
+		position: relative;
+		@include font($font-size-xl, 600, $font-line, $color);
+		text-decoration: none;
+		padding: 10px 20px;
+		border-bottom: 1px solid $form-border;
+		
+		.toggle {
+			@include position(absolute, null, 0, 0);
+			@include size(45px, 100%);
+			@include flex(center, center);
+		}
+	}
+	&-content {
+		padding: 20px 20px;
+		display: none;
+	}
+	&-actions {
+		@include flex(center);
+		
+		> li {
+			margin: 5px 20px 0 0;
+		}
+	}
+	&-row {
+		> * {
+			margin-bottom: 15px;
+		}
+	}
+	
+	&.open {
+		.entries-sort {
+			&-title .toggle {@include rotate(180deg);}
+			&-content {display: block;}
+		}
+	}
+}
+
+
+/* ENTRIES VIEW
+------------------------------------------------------------------------ */
+
+.entries-view {
+	@include flex(flex-start);
+	
+	&-left {
+		width: 200px;
+		margin-right: -200px;
+	}
+	&-right {
+		width: 100%;
+		padding-left: 230px;
+	}
+	
+	&-img {
+		@include flex(center, center);
+		img {
+			display: block;
+			max: {@include size(100%, 200px);}
+		}
+	}
+	&-info {
+		
+		> li {
+			margin-bottom: 15px;
+			&:last-child {margin: 0;}
+		}
+		
+		.item {
+			position: relative;
+			padding-left: 35px;
+			line-height: 21px;
+			
+			.icon {
+				display: block;
+				@include position(absolute, 0, 0);
+				@include font($font-size-xl, null, inherit, $color-gray-lite);
+				width: 25px;
+				text-align: center;
+				
+				.fa5 {line-height: inherit;}
+			}
+		}
+	}
+}
+
+
+/* RESPONSIVE
+------------------------------------------------------------------------ */
+
+@media (max-width: 990px) {
+
+	.entries-table thead {
+		display: none $imp;
+	}
+
+	.entries-td-hide-sm {display: none $imp;}
+	
+}
+
+@media (max-width: 600px) {
+
+	.entries-table {
+		display: block;
+		
+		tbody {
+			display: block;
+		}
+		
+		tr {
+			position: relative;
+			display: block;
+			padding: 10px 15px;
+			width: 100%;
+			
+			> td {
+				display: block;
+				width: 100% $imp;
+				padding: 0;
+				margin-bottom: 10px;
+				
+				&.entries-tree-toggles {
+					@include position(absolute, 10px, 10px);
+					width: auto $imp;
+					margin: 0;
+				}
+				
+				&.entries-new {
+					@include position(absolute, -5px, -5px);
+					width: auto $imp;
+					padding: 0;
+					margin: 0;
+				}
+				
+				&:last-child {margin: 0;}
+			}
+		}
+	}
+	
+	.entries-td {
+		
+		&-actions {
+			padding-top: 10px $imp;
+			border-top: 1px solid $border-color;
+			text-align: right;
+			
+			.btn-icon {
+				@include size(28px, 28px);
+				@include font($font-size-xs, null, 28px);
+			}
+		}
+		
+		&-hide-xs {display: none $imp;}
+	}
+	
+	.entries-brief {
+		@include font(11px, null, 16px);
+		max-height: 32px;
+		overflow: hidden;
+	}
+	
+	.entries-link {
+		@include  font(12px, 500, 15px);
+	}
+	
+	.entries-tree {
+		
+		&-item {
+			position: relative;
+			
+			.entries-title {margin-left: 30px;}
+		}
+		&-toggles {
+			
+		}
+	
+	}
+	
+	.entries-view {
+		display: block;
+		
+		&-left {
+			width: auto;
+			padding: 0;
+			margin: 0 0 $margin;
+		}
+		&-right {
+			width: auto;
+			padding: 0;
+		}
+		
+		&-img {
+			max-width: 250px;
+		}
+	}
+}

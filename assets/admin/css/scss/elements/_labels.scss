@@ -1,0 +1,105 @@
+/* DEFAULT SETTINGS
+------------------------------------------------------------------------ */
+
+.label {
+	display: inline;
+	vertical-align: 1px;
+	@include font($font-small, 600, null, $color);
+	padding: 3px 5px;
+	background: $color-gray-btn;
+}
+
+/* COLORS
+------------------------------------------------------------------------ */
+
+.label {
+	&-info {
+		background: $color-info;
+		color: #fff;
+	}
+	&-success {
+		background: $color-success;
+		color: #fff;
+	}
+	&-warning {
+		background: $color-warning;
+		color: #fff;
+	}
+	&-error {
+		background: $color-error;
+		color: #fff;
+	}
+	
+	&-gray {
+		background: $color-gray-btn;
+		color: $color;
+	}
+	&-dark {
+		background: $sidenav-color;
+		color: #fff;
+	}
+	&-black {
+		background: $color-black;
+		color: #fff;
+	}
+	&-blue {
+		background: $color-blue;
+		color: #fff;
+	}
+	&-azure {
+		background: $color-azure;
+		color: #fff;
+	}
+	&-space {
+		background: $color-space;
+		color: #fff;
+	}
+	&-green {
+		background: $color-green;
+		color: #fff;
+	}
+	&-emerald {
+		background: $color-emerald;
+		color: #fff;
+	}
+	&-meadow {
+		background: $color-meadow;
+		color: #fff;
+	}
+	&-orange {
+		background: $color-orange;
+		color: #fff;
+	}
+	&-yellow {
+		background: $color-yellow;
+		color: #fff;
+	}
+	&-brown {
+		background: $color-brown;
+		color: #fff;
+	}
+	&-red {
+		background: $color-red;
+		color: #fff;
+	}
+	&-flamingo {
+		background: $color-flamingo;
+		color: #fff;
+	}
+	&-fire {
+		background: $color-fire;
+		color: #fff;
+	}
+	&-purple {
+		background: $color-purple;
+		color: #fff;
+	}
+	&-pink {
+		background: $color-pink;
+		color: #fff;
+	}
+	&-plum {
+		background: $color-plum;
+		color: #fff;
+	}
+}

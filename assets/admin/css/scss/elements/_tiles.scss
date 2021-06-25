@@ -1,0 +1,156 @@
+/* DEFAULT SETTINGS
+------------------------------------------------------------------------ */
+
+.tile {
+	position: relative;
+	background: $body-color;
+	height: 100%;
+	overflow: hidden;
+	
+	&-body {
+		padding: 25px 15px 25px 20px;
+		text-align: right;
+	}
+	&-num {
+		@include font(35px, null, 1);
+		@include ellipsis;
+	}
+	&-label {
+		@include font($font-size, null, 20px);
+		@include ellipsis;
+	}
+	
+	&-bottom {
+		background: rgba(#000, 0.1);
+	}
+	&-link {
+		position: relative;
+		display: block;
+		padding: 8px 65px 8px 15px;
+		@include font(12px, null, 15px, inherit);
+		@include ellipsis;
+		
+		.icon {
+			@include position(absolute, null, 0, 0);
+			@include flex(center, center);
+			@include size(45px, 100%);
+		}
+	}
+	
+	&-icon {
+		@include position(absolute, -20px, 50%, null, null, 0);
+		@include font(110px, null, 1, inherit);
+		margin-top: -55px;
+		opacity: 0.15;
+	}
+}
+
+
+/* COLORS
+------------------------------------------------------------------------ */
+
+.tile {
+	
+	&-info {
+		background: $color-info;
+		color: #fff;
+	}
+	&-success {
+		background: $color-success;
+		color: #fff;
+	}
+	&-warning {
+		background: $color-warning;
+		color: #fff;
+	}
+	&-error {
+		background: $color-error;
+		color: #fff;
+	}
+	
+	&-gray {
+		background: $color-gray-btn;
+	}
+	&-dark {
+		background: $sidenav-color;
+		color: #fff;
+	}
+	&-black {
+		background: $color-black;
+		color: #fff;
+	}
+	&-blue {
+		background: $color-blue;
+		color: #fff;
+	}
+	&-azure {
+		background: $color-azure;
+		color: #fff;
+	}
+	&-space {
+		background: $color-space;
+		color: #fff;
+	}
+	&-green {
+		background: $color-green;
+		color: #fff;
+	}
+	&-emerald {
+		background: $color-emerald;
+		color: #fff;
+	}
+	&-meadow {
+		background: $color-meadow;
+		color: #fff;
+	}
+	&-orange {
+		background: $color-orange;
+		color: #fff;
+	}
+	&-yellow {
+		background: $color-yellow;
+		color: #fff;
+	}
+	&-brown {
+		background: $color-brown;
+		color: #fff;
+	}
+	&-red {
+		background: $color-red;
+		color: #fff;
+	}
+	&-flamingo {
+		background: $color-flamingo;
+		color: #fff;
+	}
+	&-fire {
+		background: $color-fire;
+		color: #fff;
+	}
+	&-purple {
+		background: $color-purple;
+		color: #fff;
+	}
+	&-pink {
+		background: $color-pink;
+		color: #fff;
+	}
+	&-plum {
+		background: $color-plum;
+		color: #fff;
+	}
+}
+
+
+/* HELPERS
+------------------------------------------------------------------------ */
+
+.tiles-list {
+	@include flex(stretch, flex-start);
+	margin: 0 -15px;
+	
+	> li {
+		padding: 0 15px;
+		margin-bottom: 30px;
+	}
+}

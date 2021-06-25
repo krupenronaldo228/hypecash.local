@@ -1,0 +1,80 @@
+.owl-stage {
+	@include flex(stretch, flex-start);
+	
+	&-outer {
+		overflow: hidden;
+	}
+
+	.owl-nav.disabled,
+	.owl-dots.disabled {
+		display: none;
+	}
+
+	.owl-nav .owl-prev,
+	.owl-nav .owl-next,
+	.owl-dot {
+		cursor: pointer;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.owl-nav button.owl-prev,
+	.owl-nav button.owl-next,
+	button.owl-dot {
+		background: none;
+		color: inherit;
+		border: none;
+		padding:0!important;
+		font: inherit;
+	}
+
+	&.owl-loaded {
+		display: block;
+	}
+
+	&.owl-loading {
+		opacity: 0;
+		display: block;
+	}
+
+	&.owl-hidden {
+		opacity: 0;
+	}
+
+	&.owl-refresh .owl-item {
+		visibility: hidden;
+	}
+
+	&.owl-drag .owl-item {
+		touch-action: pan-y;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	&.owl-grab {
+		cursor: move;
+		cursor: grab;
+	}
+}
+
+.owl-carousel {
+	.owl-item {
+		.owl-lazy {
+				opacity: 0;
+				transition: opacity 400ms ease;
+		}
+		
+		.owl-lazy[src^=""], .owl-lazy:not([src]) {
+			max-height: 0;
+		}
+
+		img.owl-lazy {
+			transform-style: preserve-3d;
+		}
+	}
+}

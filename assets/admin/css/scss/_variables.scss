@@ -1,0 +1,105 @@
+/* FONT SIZES
+------------------------------------------------------------------------ */
+
+$font-family: 'Montserrat', sans-serif;
+$font-awesome: 'Font Awesome 5 Pro';
+
+$font-size: 14px;
+$font-size-xs: 12px;
+$font-size-sm: 13px;
+$font-size-lg: 15px;
+$font-size-xl: 16px;
+
+$font-small: 0.8em;
+$font-smaller: 0.6em;
+$font-big: 1.2em;
+$font-bigger: 1.5em;
+
+$font-h1: 30px;
+$font-h2: 24px;
+$font-h3: 20px;
+$font-h4: 16px;
+$font-h5: 14px;
+$font-h6: 12px;
+
+$font-small: 0.8em;
+$font-big: 1.2em;
+
+$font-line: 1.5;
+$font-line-xs: 1.2;
+$font-line-xl: 1.8;
+
+
+/* COLORS
+------------------------------------------------------------------------ */
+
+$color: 			#182125;
+
+$color-white:		#ffffff;
+$color-black:		#000000;
+
+$color-gray:		#6b6b6b;
+$color-gray-lite:	#969696;
+$color-gray-btn:	#c5c5c5;
+
+$color-blue:		#019fe6;
+$color-azure:		#41c4ff;
+$color-space:		#016c9c;
+$color-green:		#43c343;
+$color-emerald:		#52e880;
+$color-meadow:		#1b8c1b;
+$color-orange:		#fd9b1e;
+$color-yellow:		#ffd400;
+$color-brown:		#a95600;
+$color-red:			#fb4e3e;
+$color-flamingo:	#ff7e72;
+$color-fire:		#d82e1f;
+$color-purple:		#8e44ad;
+$color-pink:		#ff6ec5;
+$color-plum:		#682784;
+
+$color-info:		$color-blue;
+$color-success:		$color-green;
+$color-warning:		$color-orange;
+$color-error:		$color-red;
+$color-disabled:	#f3f3f3;
+
+$color-mute-info:		#e5f5fc;
+$color-mute-success:	#ecf9ec;
+$color-mute-warning:	#fff5e8;
+$color-mute-error:		#ffedeb;
+
+$body-color:		#f6f7fb;
+$header-color: 		#182125;
+$sidenav-color:		#202d33;
+
+$border-color: 		#e6e8f1;
+$form-border: 		#d8dbe6;
+
+/* FORM STUFF
+------------------------------------------------------------------------ */
+
+$form-margin: 15px;
+$form-submargin: 7px;
+
+$form-height: 40px;
+$form-height-xs: 25px;
+$form-height-sm: 33px;
+$form-height-lg: 50px;
+$form-height-xl: 60px;
+
+
+/* TEMPLATE
+------------------------------------------------------------------------ */
+
+$header-height: 50px;
+
+$sidenav-width: 250px;
+
+$margin: 20px;
+
+
+/* HELPERS
+------------------------------------------------------------------------ */
+
+$imp: !important;

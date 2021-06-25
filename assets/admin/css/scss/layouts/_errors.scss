@@ -1,0 +1,30 @@
+.error404 {
+	@include flex(center);
+	
+	&-num {
+		width: 185px;
+		margin-right: -185px;
+		@include font(100px, 300, 1, $color-azure);
+		letter-spacing: -4px;
+	}
+	&-content {
+		width: 100%;
+		padding-left: 225px;
+	}
+	&-title {
+		@include font(18px, 700);
+	}
+	&-text {
+		margin-top: 5px;
+		@include font(null, null, $font-line-xl, $color-gray);
+		
+		a {
+			font-weight: 600;
+			color: $color
+		}
+	}
+	&-link {
+		margin-top: 5px;
+		@include font($font-size-xs, 600);
+	}
+}

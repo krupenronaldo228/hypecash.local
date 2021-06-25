@@ -1,0 +1,175 @@
+//category
+
+.category-parents {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  //margin-bottom: 30px;
+
+  > li {
+    margin: 0 10px 10px 0;
+  }
+
+ .a {
+  display: block;
+  width: 130px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  background: #4caf50;
+  transition: all .3s ease 0s;
+  -webkit-transition: all .3s ease 0s;
+ }
+}
+
+.news-list {
+
+  > li {
+    margin-bottom: 30px;
+    &:last-child {margin: 0;}
+  }
+}
+
+.news-item {
+  @include flex(flex-start);
+  color: inherit;
+  text-decoration: none;
+
+  .image {
+    width: 250px;
+    margin-right: -250px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      @include transition;
+    }
+  }
+  .description {
+    width: 100%;
+    padding-left: 280px;
+  }
+
+  .date {
+    @include font(13px, null, 15px, $color-gray-lite);
+    margin-bottom: 10px;
+
+    .fa5 {margin-right: 5px;}
+  }
+
+  .title {
+    @include font(18px, 700, 25px);
+    text-decoration: underline;
+  }
+
+  .text {
+    @include font(null, null, 21px, $color-gray);
+    margin-top: 10px;
+  }
+
+  .action {
+    margin-top: 5px;
+  }
+
+  .link {
+    color: $color-link;
+    text-decoration: underline;
+
+    &:hover {text-decoration: none;}
+  }
+
+  &:hover {
+    .image {
+      img {@include scale(1.05);}
+    }
+    .title {
+      text-decoration: none;
+    }
+  }
+}
+
+.news-content {
+  @include flex(flex-start);
+
+  &-left {
+    width: 100%;
+    padding-right: 290px;
+    margin-right: -250px;
+  }
+  &-right {
+    width: 250px;
+  }
+
+  &-top {
+    margin-bottom: 20px;
+  }
+  &-date {
+    @include font(null, null, 20px, $color-gray);
+    margin-top: 10px;
+
+    .fa5 {margin-right: 5px;}
+  }
+}
+
+.news-similar {
+
+  &-title {
+    @include font(20px, 700, 25px);
+    margin-bottom: 25px;
+  }
+  &-list {
+
+    > li {
+      margin-bottom: 30px;
+      &:last-child {margin: 0;}
+    }
+  }
+  &-item {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+
+    .image {
+      overflow: hidden;
+      margin-bottom: 10px;
+
+      img {
+        display: block;
+        width: 100%;
+        @include transition;
+      }
+    }
+    .date {
+      @include font(12px, null, 1.3, $color-gray-lite);
+      margin-bottom: 5px;
+
+      .fa5 {margin-right: 5px;}
+    }
+    .title {
+      @include font(16px, 700, 1.5);
+      text-decoration: underline;
+    }
+    .text {
+      @include font(13px, null, 1.3, $color-gray);
+      margin-top: 5px;
+      max-height: 48px;
+      overflow: hidden;
+    }
+
+    &:hover {
+      .image {
+        img {@include scale(1.05);}
+      }
+      .title {
+        text-decoration: none;
+      }
+    }
+  }
+}

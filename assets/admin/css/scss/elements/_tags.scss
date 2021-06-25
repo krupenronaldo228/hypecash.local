@@ -1,0 +1,67 @@
+/* DEFAULT SETTINGS
+------------------------------------------------------------------------ */
+
+.tag {
+	@include flex(center);
+	@include font($font-size-sm, 500, $font-line);
+	@include text(center, none);
+	@include ellipsis;
+	max-width: 100%;
+	border: 1px solid $form-border;
+	background: $color-disabled;
+	padding: 5px 12px;
+	
+	&-info {
+		color: $color-space;
+		background: $color-mute-info;
+		border-color: $color-info;
+	}
+	
+	&-success {
+		color: $color-meadow;
+		background: $color-mute-success;
+		border-color: $color-success;
+	}
+	
+	&-warning {
+		color: $color-brown;
+		background: $color-mute-warning;
+		border-color: $color-warning;
+	}
+	
+	&-error {
+		color: $color-fire;
+		background: $color-mute-error;
+		border-color: $color-error;
+	}
+	
+	&-xs {
+		@include font($font-size-xs);
+		padding: 3px 10px;
+	}
+	&-xl {
+		@include font($font-size-xl);
+		padding: 8px 15px;
+	}
+	
+	&-close {
+		@include flex(center, center);
+		@include size(1.25em, 100%);
+		@include font($font-small, null, null, inherit);
+		text-decoration: none;
+		margin-left: 5px;
+	}
+}
+
+
+/* LIST
+------------------------------------------------------------------------ */
+
+.tag-list {
+	@include flex(stretch);
+	margin-bottom: $margin;
+	
+	> .tag {
+		margin: 0 5px 5px 0;
+	}
+}

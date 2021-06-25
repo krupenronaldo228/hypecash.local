@@ -1,0 +1,60 @@
+.pagination {
+	@include flex(center, center);
+	margin-top: 40px;
+	text-align: center;
+	font-size: 0;
+	
+	li {
+		@include font(14px, 700);
+	}
+	
+	a {
+		display: block;
+		text-decoration: none;
+		transition: color 0.3s ease 0s;
+	}
+	
+	&-num a {
+		@include size(38px, 38px);
+		color: $color-link;
+		line-height: 38px;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			background: #f2f2f2;
+		}
+	}
+	
+	&-active a {
+		color: #fff;
+		background: $color-link;
+		&:hover {
+			color: #fff;
+			background: $color-link;
+		}
+	}
+	
+	&-nav a {
+		@include font(13px, 600);
+		color: $color-gray;
+		.fa {
+			vertical-align: 1px;
+			font-size: 10px;
+		}
+		span {
+			text-decoration: underline;
+		}
+		&:hover {
+			span {text-decoration: none;}
+		}
+	}
+	
+	&-left {
+		margin-right: 15px;
+		.fa {margin-right: 5px;}
+	}
+	&-right {
+		margin-left: 15px;
+		.fa {margin-left: 5px;}
+	}
+	
+}

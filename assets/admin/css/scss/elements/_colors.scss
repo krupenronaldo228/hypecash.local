@@ -1,0 +1,126 @@
+/* COLORS
+------------------------------------------------------------------------ */
+
+.color {
+	
+	&-default {color: $color;}
+	&-inherit {color: inherit;}
+	
+	&-white {color: $color-white;}
+	&-black {color: $color-black;}
+
+	&-gray {color: $color-gray;}
+	&-gray-lite {color: $color-gray-lite;}
+
+	&-info {color: $color-info;}
+	&-success {color: $color-success;}
+	&-warning {color: $color-warning;}
+	&-error {color: $color-error;}
+
+	&-blue {color: $color-blue;}
+	&-azure {color: $color-azure;}
+	&-space {color: $color-space;}
+	&-green {color: $color-green;}
+	&-emerald {color: $color-emerald;}
+	&-meadow {color: $color-meadow;}
+	&-orange {color: $color-orange;}
+	&-yellow {color: $color-yellow;}
+	&-brown {color: $color-brown;}
+	&-red {color: $color-red;}
+	&-flamingo {color: $color-flamingo;}
+	&-fire {color: $color-fire;}
+	&-purple {color: $color-purple;}
+	&-pink {color: $color-pink;}
+	&-plum {color: $color-plum;}
+	
+	&-mute {
+		&-info {color: $color-mute-info;}
+		&-success {color: $color-mute-success;}
+		&-warning {color: $color-mute-warning;}
+		&-error {color: $color-mute-error;}
+	}
+	
+}
+
+
+/* BACKGROUNDS
+------------------------------------------------------------------------ */
+
+.bg {
+	
+	&-default {background-color: $color;}
+	&-inherit {background-color: inherit;}
+	
+	&-white {background-color: $color-white;}
+	&-black {background-color: $color-black;}
+
+	&-gray {background-color: $color-gray;}
+	&-gray-lite {background-color: $color-gray-lite;}
+
+	&-info {background-color: $color-info;}
+	&-success {background-color: $color-success;}
+	&-warning {background-color: $color-warning;}
+	&-error {background-color: $color-error;}
+
+	&-blue {background-color: $color-blue;}
+	&-azure {background-color: $color-azure;}
+	&-space {background-color: $color-space;}
+	&-green {background-color: $color-green;}
+	&-emerald {background-color: $color-emerald;}
+	&-meadow {background-color: $color-meadow;}
+	&-orange {background-color: $color-orange;}
+	&-yellow {background-color: $color-yellow;}
+	&-brown {background-color: $color-brown;}
+	&-red {background-color: $color-red;}
+	&-flamingo {background-color: $color-flamingo;}
+	&-fire {background-color: $color-fire;}
+	&-purple {background-color: $color-purple;}
+	&-pink {background-color: $color-pink;}
+	&-plum {background-color: $color-plum;}
+	
+	&-mute {
+		&-info {background-color: $color-mute-info;}
+		&-success {background-color: $color-mute-success;}
+		&-warning {background-color: $color-mute-warning;}
+		&-error {background-color: $color-mute-error;}
+	}
+}
+
+
+/* DEMO
+------------------------------------------------------------------------ */
+
+.colors-demo {
+	@include flex(stretch);
+	margin: 0 -15px;
+	
+	> li {
+		width: 25%;
+		padding: 0 15px;
+		margin-bottom: 30px;
+	}
+	
+	&-item {
+		position: relative;
+		border: 1px solid $border-color;
+		margin-bottom: 30px;
+		padding-bottom: 35px;
+	}
+	&-example {
+		height: 100px;
+		border-bottom: 1px solid $border-color;
+	}
+	&-title {
+		padding: 20px 15px;
+		@include font($font-size, 600, $font-size-xl);
+		@include text(center, none, uppercase);
+	}
+	&-hex {
+		@include position(absolute, 0, null, null, 0);
+		@include font($font-size-xs, 600, 15px);
+		text-align: center;
+		width: 100%;
+		padding: 10px 15px;
+		background: $color-disabled;
+	}
+}

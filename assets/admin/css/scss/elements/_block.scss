@@ -1,0 +1,109 @@
+/* SIZES
+------------------------------------------------------------------------ */
+
+.wide {width: 100%;}
+.max-wide {max-width: 100%;}
+
+@for $i from 1 through 40 {
+	.w#{$i * 25} { width: 25px * $i $imp; }
+}
+
+
+/* MARGIN
+------------------------------------------------------------------------ */
+
+@for $i from 1 through 10 {
+	.m#{$i * 5} { margin: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.mt#{$i * 5} { margin-top: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.mb#{$i * 5} { margin-bottom: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.ml#{$i * 5} { margin-left: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.mr#{$i * 5} { margin-right: 5px * $i $imp; }
+}
+
+.no-margin {margin: 0 $imp;}
+
+
+/* PADDING
+------------------------------------------------------------------------ */
+
+@for $i from 1 through 10 {
+	.p#{$i * 5} { margin: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.pt#{$i * 5} { margin-top: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.pb#{$i * 5} { margin-bottom: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.pl#{$i * 5} { margin-left: 5px * $i $imp; }
+}
+
+@for $i from 1 through 10 {
+	.pr#{$i * 5} { margin-right: 5px * $i $imp; }
+}
+
+.no-padding {padding: 0 $imp;}
+
+
+/* DISPLAY
+------------------------------------------------------------------------ */
+
+@each $display in block, none, inline, inline-block {
+	.#{$display} {display: $display;}
+}
+
+
+/* FLOATS
+------------------------------------------------------------------------ */
+
+@each $float in left, right {
+	.#{$float} {float: $float;}
+}
+
+.floater {
+	float: none $imp;
+	width: 0 $imp;
+	min-width: 0 $imp;
+	max-width: 0 $imp;
+	height: 0 $imp;
+	min-height: 0 $imp;
+	max-height: 0 $imp;
+	border: 0 $imp;
+	padding: 0 $imp;
+	margin: 0 $imp;
+	background: none $imp;
+	clear: both $imp;
+}
+
+.clearfix {
+	&:before, &:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+
+/* LINES
+------------------------------------------------------------------------ */
+
+hr {
+	display: block;
+	border-top: 1px solid $border-color;
+}

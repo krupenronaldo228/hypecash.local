@@ -1,0 +1,39 @@
+.pageview-cap {
+	background: #f9f9f9;
+	padding: 50px 10px;
+}
+
+.cap {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 25px 30px;
+	background: #fff;
+	box-shadow: 0 0 5px rgba(#000, 0.1);
+	border: 1px solid #e5e5e5;
+	text-align: center;
+}
+
+.cap-top {
+	padding-bottom: 15px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #e5e5e5;
+	
+	.title {
+		@include font(20px, 700, 1);
+		text-transform: uppercase;
+	}
+	.descr {
+		margin-top: 5px;
+		@include font(14px, null, 20px, $color-gray-lite);
+	}
+}
+
+.cap-bottom {
+	.title {
+		@include font(16px, 700, 25px);
+	}
+	.descr {
+		margin-top: 5px;
+		@include font(14px, null, 20px, $color-gray);
+	}
+}
